@@ -3,7 +3,7 @@ import Kesani from "../assets/kesani.png";
 function HeroSection2() {
   return (
     <>
-      <section className="mx-30 flex justify-center">
+      <section className="mx-30 flex justify-center items-center">
         <div className="w-full h-[650px] relative flex justify-between">
           <div className="absolute inset-0 bg-red-600"></div>
           <img
