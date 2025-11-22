@@ -8,26 +8,16 @@ function Cards() {
           <h1 className="text-white text-2xl font-bold text-center border-b py-5 w-full border-white/50">
             test
           </h1>
-          <p className="text-white border-b border-white/50 p-2">
+          <p className="text-white border-b border-white/50 px-2 line-clamp-4">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex tempore
             doloribus impedit doloremque optio dignissimos sit iusto, facilis
-            soluta modi!
+            soluta modi! Lorem ipsum dolor sit amet consectetur, adipisicing
+            elit. Similique, animi.
           </p>
-          <button className="bg-red-500 text-white self-center p-1.5 rounded-full w-3/4 mt-3 cursor-pointer active:bg-red-700 hover:bg-red-600 transition-all duration-300 text-2xl">test</button>
+          <button className="bg-red-500 text-white self-center p-1.5 rounded-full w-3/4 mt-3 cursor-pointer active:bg-red-700 hover:bg-red-600 transition-all duration-300 text-2xl">
+            test
+          </button>
         </div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
-        <div className="rounded-xl border border-white/50 h-60 flex flex-col"></div>
       </div>
     </>
   );
