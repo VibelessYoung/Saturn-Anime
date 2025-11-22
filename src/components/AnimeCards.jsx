@@ -57,7 +57,7 @@ function Cards() {
       <div className="flex justify-center my-10">
         <button
           onClick={() => setPage((prev) => prev + 1)}
-          className="bg-purple-600 text-white px-8 py-3 rounded-full text-xl hover:bg-purple-700 active:bg-purple-800 transition-all duration-300"
+          className="bg-purple-600 text-white px-8 py-3 rounded-xl text-xl hover:bg-purple-700 active:bg-purple-800 transition-all duration-300"
         >
           {loading ? "Loading..." : "Load More"}
         </button>
