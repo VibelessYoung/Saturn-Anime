@@ -11,10 +11,11 @@ function Cards() {
       const res = await fetch(
         `https://api.jikan.moe/v4/anime?page=${page}&limit=8`
       );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       setAnime((prev) => [...prev, ...data.data]);
     } catch (err) {
-      setError("something wrong !" + { err });
+      setError(err.message || "something wrong !");
     } finally {
       setLoading(false);
     }
@@ -55,22 +56,30 @@ function Cards() {
 
       <div className="flex justify-center my-10">
         <button
+          disabled={loading}
           onClick={() => setPage((prev) => prev + 1)}
-          className="flex gap-1 justify-center items-center animate-bounce bg-purple-600 text-white px-8 py-3 rounded-xl text-xl hover:bg-purple-700 active:bg-purple-800 transition-all duration-300"
+          className={`
+    flex gap-1 justify-center items-center
+    bg-purple-600 text-white px-8 py-3 rounded-xl text-xl
+    transition-all duration-300
+
+    ${loading ? "" : "animate-bounce"}
+
+    hover:bg-purple-700 active:bg-purple-800
+    disabled:bg-purple-400 disabled:cursor-not-allowed disabled:opacity-50
+  `}
         >
           {loading ? "Loading..." : "Load More"}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="size-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            class="size-5"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+              fill-rule="evenodd"
+              d="M9.47 15.28a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 1 0-1.06-1.06L10 13.69 6.28 9.97a.75.75 0 0 0-1.06 1.06l4.25 4.25ZM5.22 6.03l4.25 4.25a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 0 0-1.06-1.06L10 8.69 6.28 4.97a.75.75 0 0 0-1.06 1.06Z"
+              clip-rule="evenodd"
             />
           </svg>
         </button>
