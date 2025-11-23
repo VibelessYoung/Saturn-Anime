@@ -3,6 +3,7 @@ import HeroSlider from "./HeroSection.jsx";
 import Cards from "./AnimeCards.jsx";
 import Questions from "./Q&A.jsx";
 import Contact from "./Contact.jsx";
+import Footer from "./Footer.jsx";
 function App() {
   return (
     <>
@@ -11,6 +12,7 @@ function App() {
       <Cards />
       <Questions />
       <Contact />
+      <Footer />
     </>
   );
 }
