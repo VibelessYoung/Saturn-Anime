@@ -1,3 +1,4 @@
+import { Instagram, Youtube, Twitter } from "lucide-react";
 function Footer() {
   return (
     <footer className="mt-32 bg-gray-950 backdrop-blur-xl border-t border-white/10 py-14 px-5">
@@ -30,17 +31,24 @@ function Footer() {
         <div className="flex flex-col gap-4">
           <h2 className="text-xl font-bold text-red-400">Follow Us</h2>
           <div className="flex gap-5 text-xl">
-            <div className="flex gap-3">
-              <a className="hover:text-red-400 drop-shadow-[0_0_10px_#ff0000] transition-all cursor-pointer">
+            <div className="flex gap-1">
+              <Instagram size={28} className="drop-shadow-[0_0_10px_#ff0000]" />
+              <a className="hover:text-red-400 transition-all cursor-pointer">
                 Instagram
               </a>
             </div>
-            <a className="hover:text-red-400 drop-shadow-[0_0_10px_#ff0000] transition-all cursor-pointer">
-              YouTube
-            </a>
-            <a className="hover:text-red-400 drop-shadow-[0_0_10px_#ff0000] transition-all cursor-pointer">
-              Discord
-            </a>
+            <div className="flex gap-1">
+              <Youtube size={28} className="drop-shadow-[0_0_10px_#ff0000]" />
+              <a className="hover:text-red-400 transition-all cursor-pointer">
+                YouTube
+              </a>
+            </div>
+            <div className="flex gap-1">
+              <Twitter size={28} className="drop-shadow-[0_0_10px_#ff0000]" />
+              <a className="hover:text-red-400 transition-all cursor-pointer">
+                Twitter
+              </a>
+            </div>
           </div>
         </div>
       </div>
