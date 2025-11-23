@@ -1,4 +1,3 @@
-import TestImage from "../assets/scarlet.png";
 import { useState, useEffect } from "react";
 function Cards() {
   const [anime, setAnime] = useState([]);
