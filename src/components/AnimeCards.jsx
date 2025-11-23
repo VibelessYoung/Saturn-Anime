@@ -14,7 +14,7 @@ function Cards() {
       const data = await res.json();
       setAnime((prev) => [...prev, ...data.data]);
     } catch (err) {
-      setError("something wrong !");
+      setError("something wrong !" + { err });
     } finally {
       setLoading(false);
     }
@@ -56,9 +56,23 @@ function Cards() {
       <div className="flex justify-center my-10">
         <button
           onClick={() => setPage((prev) => prev + 1)}
-          className="bg-purple-600 text-white px-8 py-3 rounded-xl text-xl hover:bg-purple-700 active:bg-purple-800 transition-all duration-300"
+          className="flex gap-1 justify-center items-center animate-bounce bg-purple-600 text-white px-8 py-3 rounded-xl text-xl hover:bg-purple-700 active:bg-purple-800 transition-all duration-300"
         >
           {loading ? "Loading..." : "Load More"}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+            />
+          </svg>
         </button>
       </div>
 
