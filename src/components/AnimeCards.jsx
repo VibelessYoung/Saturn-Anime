@@ -9,7 +9,7 @@ function Cards() {
     try {
       setLoading(true);
       const res = await fetch(
-        `https://api.jikan.moe/v4/anime?page=${page}&limit=8`
+        `https://api.jikan.moe/v4/anime?page=${page}&limit=12`
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
