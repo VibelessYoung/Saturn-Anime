@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 function Cards() {
   const [anime, setAnime] = useState([]);
   const [page, setPage] = useState(1);
@@ -47,9 +49,12 @@ function Cards() {
               {item.synopsis?.slice(0, 250) || "No description"}
             </p>
 
-            <button className="bg-red-500 text-white self-center p-1.5 rounded-full w-3/4 mt-3 mb-3 cursor-pointer active:bg-red-700 hover:bg-red-600 transition-all duration-300 text-xl">
+            <Link
+              to={`/anime/${item.mal_id}`}
+              className="bg-red-500 text-white self-center p-1.5 rounded-full w-3/4 mt-3 mb-3 cursor-pointer active:bg-red-700 hover:bg-red-600 transition-all duration-300 text-xl text-center"
+            >
               More Info
-            </button>
+            </Link>
           </div>
         ))}
       </div>

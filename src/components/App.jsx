@@ -1,19 +1,16 @@
-import Header from "./Header.jsx";
-import HeroSlider from "./HeroSection.jsx";
-import Cards from "./AnimeCards.jsx";
-import Questions from "./Q&A.jsx";
-import Contact from "./Contact.jsx";
-import Footer from "./Footer.jsx";
+import { Routes, Route } from "react-router-dom";
+import Layout from "../layout/Layout.jsx";
+import Home from "../pages/Home";
+import AnimeDetails from "../pages/AnimeDetails";
+
 function App() {
   return (
-    <>
-      <Header />
-      <HeroSlider />
-      <Cards />
-      <Questions />
-      <Contact />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="anime/:id" element={<AnimeDetails />} />
+      </Route>
+    </Routes>
   );
 }
 
