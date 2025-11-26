@@ -6,10 +6,18 @@ import Contact from "../components/Contact";
 function Home() {
   return (
     <>
-      <HeroSlider />
-      <Cards />
-      <Questions />
-      <Contact />
+      <div id="home">
+        <HeroSlider />
+      </div>
+      <div id="anime">
+        <Cards />
+      </div>
+      <div id="qa">
+        <Questions />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
     </>
   );
 }

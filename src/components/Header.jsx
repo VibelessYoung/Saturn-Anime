@@ -1,4 +1,5 @@
 import Logo from "../assets/saturn.png";
+import { HashLink } from "react-router-hash-link";
 
 function Header() {
   return (
@@ -14,16 +15,39 @@ function Header() {
             SATURN ANIME
           </h1>
           <nav className="flex gap-5">
-            <a href="#" className="text-white text-base font-medium opacity-80 hover:text-red-500 transition-all duration-300">Home</a>
-            <a href="#" className="text-white text-base font-medium opacity-80 hover:text-red-500 transition-all duration-300">Anime</a>
-            <a href="#" className="text-white text-base font-medium opacity-80 hover:text-red-500 transition-all duration-300">Q&A</a>
-            <a href="#" className="text-white text-base font-medium opacity-80 hover:text-red-500 transition-all duration-300">Contact</a>
+            <HashLink
+              smooth
+              to="/#home"
+              className="text-white opacity-80 hover:text-red-500 transition"
+            >
+              Home
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#anime"
+              className="text-white opacity-80 hover:text-red-500 transition"
+            >
+              Anime
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#qa"
+              className="text-white opacity-80 hover:text-red-500 transition"
+            >
+              Q&A
+            </HashLink>
+            <HashLink
+              smooth
+              to="/#contact"
+              className="text-white opacity-80 hover:text-red-500 transition"
+            >
+              Contact
+            </HashLink>
           </nav>
         </header>
       </div>
     </>
   );
 }
-
 
 export default Header;
