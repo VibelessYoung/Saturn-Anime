@@ -40,7 +40,7 @@ function Questions() {
   }
 
   return (
-    <div className="flex flex-col items-center mx-50 mt-20 gap-4">
+    <div className="flex flex-col items-center mx-5 md:mx-30 mt-20 gap-4">
       {data.map((item) => (
         <div
           key={item.id}
@@ -50,7 +50,7 @@ function Questions() {
             className="h-20 flex justify-between items-center cursor-pointer"
             onClick={() => toggle(item.id)}
           >
-            <p className="text-white font-bold text-2xl">{item.question}</p>
+            <p className="text-white font-bold text-lg md:text-xl lg:text-2xl">{item.question}</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

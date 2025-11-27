@@ -30,7 +30,7 @@ function Footer() {
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="text-xl font-bold text-red-400">Follow Us</h2>
-          <div className="flex gap-5 text-xl">
+          <div className="flex gap-5 sm:text-xl">
             <div className="flex gap-1">
               <Instagram size={28} className="drop-shadow-[0_0_10px_#ff0000]" />
               <a className="hover:text-red-400 transition-all cursor-pointer">
