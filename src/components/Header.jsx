@@ -9,7 +9,6 @@ function Header() {
   return (
     <>
       <div className="h-20 relative" />
-
       <div className="fixed z-50 w-full top-0">
         <header className="bg-white/10 backdrop-blur-xl m-5 px-5 rounded-xl transition-all duration-300 shadow-lg border border-white/50">
           <div className="h-20 flex justify-between items-center">
