@@ -10,10 +10,14 @@ function Cards() {
   async function fetchAnime() {
     try {
       setLoading(true);
+      setError("");
       const res = await fetch(
         `https://api.jikan.moe/v4/anime?page=${page}&limit=12`
       );
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.message || `HTTP Error ${res.status}`);
+      }
       const data = await res.json();
       setAnime((prev) => [...prev, ...data.data]);
     } catch (err) {
@@ -90,7 +94,17 @@ function Cards() {
         </button>
       </div>
 
-      {error && <p className="text-center text-red-500">{error}</p>}
+      {error && (
+        <div className="bg-red-500/20 text-red-400 p-4 rounded-xl mx-auto w-3/4 text-center mt-10">
+          <p>{error}</p>
+          <button
+            onClick={fetchAnime}
+            className="mt-3 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
+          >
+            Retry
+          </button>
+        </div>
+      )}
     </>
   );
 }
