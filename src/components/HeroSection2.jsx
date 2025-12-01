@@ -1,4 +1,4 @@
-import Kesani from "../assets/Kesani.png";
+import Kesani from "../assets/kesani.png";
 
 function HeroSection2() {
   return (
