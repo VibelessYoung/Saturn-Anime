@@ -70,7 +70,7 @@ function Cards() {
           className={`
     flex gap-1 justify-center items-center
     bg-purple-600 text-white px-8 py-3 rounded-xl text-xl
-    transition-all duration-300
+    transition-all duration-300 cursor-pointer
 
     ${loading ? "" : "animate-bounce"}
 
@@ -99,7 +99,7 @@ function Cards() {
           <p>{error}</p>
           <button
             onClick={fetchAnime}
-            className="mt-3 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
+            className="mt-3 cursor-pointer bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
           >
             Retry
           </button>
