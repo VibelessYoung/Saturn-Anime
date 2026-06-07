@@ -12,7 +12,7 @@ function Cards() {
       setLoading(true);
       setError("");
       const res = await fetch(
-        `https://api.jikan.moe/v4/anime?page=${page}&limit=12`
+        `https://api.jikan.moe/v4/anime?page=${page}&limit=12`,
       );
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
@@ -63,36 +63,39 @@ function Cards() {
         ))}
       </div>
 
-      <div className="flex justify-center my-10">
-        <button
-          disabled={loading}
-          onClick={() => setPage((prev) => prev + 1)}
-          className={`
-    flex gap-1 justify-center items-center
-    bg-purple-600 text-white px-8 py-3 rounded-xl text-xl
-    transition-all duration-300 cursor-pointer
+      {!error && (
+        <div className="flex justify-center my-10">
+          <button
+            disabled={loading}
+            onClick={() => setPage((prev) => prev + 1)}
+            className={`
+        flex gap-1 justify-center items-center
+        bg-purple-600 text-white px-8 py-3 rounded-xl text-xl
+        transition-all duration-300 cursor-pointer
 
-    ${loading ? "" : "animate-bounce"}
+        ${loading ? "animate-pulse" : ""}
 
-    hover:bg-purple-700 active:bg-purple-800
-    disabled:bg-purple-400 disabled:cursor-not-allowed disabled:opacity-50
-  `}
-        >
-          {loading ? "Loading..." : "Load More"}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            class="size-5"
+        hover:bg-purple-700 active:bg-purple-800
+        disabled:bg-purple-400 disabled:cursor-not-allowed disabled:opacity-50
+      `}
           >
-            <path
-              fill-rule="evenodd"
-              d="M9.47 15.28a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 1 0-1.06-1.06L10 13.69 6.28 9.97a.75.75 0 0 0-1.06 1.06l4.25 4.25ZM5.22 6.03l4.25 4.25a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 0 0-1.06-1.06L10 8.69 6.28 4.97a.75.75 0 0 0-1.06 1.06Z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
+            {loading ? "Loading..." : "Load More"}
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="size-5"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M9.47 15.28a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 1 0-1.06-1.06L10 13.69 6.28 9.97a.75.75 0 0 0-1.06 1.06l4.25 4.25Z"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
 
       {error && (
         <div className="bg-red-500/20 text-red-400 p-4 rounded-xl mx-auto w-3/4 text-center mt-10">
